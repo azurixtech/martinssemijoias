@@ -1,0 +1,330 @@
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-dark:  #550014;
+      --brown-mid:   #4e0314;
+      --brown-light: #4e0314;
+      --beige-bg:    #fff4d3;
+      --beige-card:  #ede0d4;
+      --text-dark:   #2c1a0e;
+      --text-body:   #4e0314;
+      --white:       #ffffff;
+      --gold:        #c9a96e;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--beige-bg);
+      color: var(--text-body);
+      max-width: 430px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--brown-dark);
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: brightness(0.88);
+    }
+
+    /* gradient overlay at bottom */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 55%;
+      
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 32px;
+      left: 0; right: 0;
+      text-align: center;
+      z-index: 2;
+      padding: 0 24px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700px;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+
+    .hero-text .subtitle {
+      font-family: 'Lato', Arial;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgb(255, 255, 255);
+      margin-top: 6px;
+    }
+
+    /* ── SOBRE MIM ── */
+.sobre {
+  background: var(--beige-bg);
+  padding: 36px 28px 32px;
+}
+
+.sobre::before {
+  content: "";
+  display: block;
+  width: 85%;
+  max-width: 320px;
+  height: 1px;
+  background: rgba(122, 87, 63, 0.25);
+  margin: 0 auto 30px auto;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: var(--brown-dark);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.sobre p {
+  font-family: Arial, Helvetica, serif;
+  font-size: 18px;
+  line-height: 1.78;
+  color: var(--text-body);
+  text-align: justify;
+}
+
+    /* ── SERVIÇOS ── */
+    .servicos {
+  position: relative;
+  padding: 36px 24px 40px;
+  margin-top: 8px;
+  overflow: hidden;
+
+  background-image: url('../../img/fototrabalhando.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.servicos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+    .servicos .section-title {
+      color: var(--beige-bg);
+      margin-bottom: 20px;
+      position: relative;
+  z-index: 2;
+    }
+
+    .service-list {
+      list-style: none;
+      position: relative;
+  z-index: 2;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .service-list li:first-child {
+      border-top: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .service-list li .arrow {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      flex-shrink: 0;
+    }
+
+    .btn-contato {
+      display: block;
+      margin: 30px auto 0;
+      width: fit-content;
+      padding: 11px 36px;
+      border: 1.5px solid rgba(255,255,255,0.7);
+      border-radius: 50px;
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+  z-index: 2;
+    }
+
+    .btn-contato:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ── CARDS (Catálogo / Fale / Localização) ── */
+.card {
+  background: var(--brown-dark);
+  border: 2px solid #E5C07B;
+  border-radius: 16px;
+  min-height: 90px;
+  padding: 12px 20px; /* antes 50px */
+  margin: 25px 25px 0; /* cria espaço nas laterais */
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+}
+
+.cards {
+  background: var(--brown-dark);
+  padding: 20px 0;
+}
+
+.card-info {
+  width: 42%;
+}
+
+.card-info h3 {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.2;
+  min-height: 45px;
+  margin-bottom: 10px;
+ 
+  margin-left: 15px; /* empurra para a direita */
+}
+
+.card-info a {
+  display: inline-block;
+  padding: 8px 18px;
+  background: #f3eee7;
+  color: #7a573f;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.68rem;
+  font-family: 'Lato', sans-serif;
+  transition: 0.3s ease;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.card-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Catálogo */
+.catalogo {
+  right: 5px;
+}
+
+.catalogo img {
+  width: 165px;
+}
+
+/* Telefone */
+.telefone {
+  right: 35px;
+}
+
+.telefone img {
+  width: 85px;
+}
+
+/* Localização */
+.localizacao {
+  right: 35px;
+}
+
+.localizacao img {
+  width: 110px;
+}
+
+.card .btn-contato {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 18px;
+  font-size: 0.68rem;
+  background: #f3eee7;
+  color: #7a573f;
+  border: none;
+  text-align: center;
+}
+
+
+/* Estrela superior direita */
+.card::before {
+  content: "✦";
+  position: absolute;
+  top: -5px;
+  right: 8px;
+
+  color: var(--gold);
+  font-size: 28px;
+}
+
+/* Estrela inferior esquerda */
+.card::before {
+  content: "✦";
+  position: absolute;
+  top: -20px;
+  right: 10px;
+
+  color: #E5C07B;
+  font-size: 28px;
+}
+
+.card::after {
+  content: "✦";
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+
+  color: #E5C07B;
+  font-size: 28px;
+}
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown-dark);
+      text-align: center;
+      padding: 14px 20px 28px;
+      font-size: 0.85rem;
+      color: #ffffff;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
